@@ -1,0 +1,8 @@
+nyc_data:
+  folder_path: data
+datalake:
+  endpoint: localhost:9000
+  bucket_name: datalake
+  folder_name: batch
+  access_key: minio_access_key
+  secret_key: minio_secret_key
