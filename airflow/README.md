@@ -37,7 +37,8 @@ You can access at `http://localhost:8080/` and login with username && password i
 <img src="../imgs/airflow_1.png" width=100% height=100%>
 
 3. **Run DAG**:
-   You can manually run DAGS by click on `Run`
+
+You can manually run DAGS by click on `Run`
 
 <p align="center">
 <img src="../imgs/airflow_2.png" width=100% height=100%>
