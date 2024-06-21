@@ -81,7 +81,13 @@ services:
 
   postgresql:
     image: postgres:latest
+    command: ["postgres", "-c", "wal_level=logical"]
     container_name: dw-postgresql
+    healthcheck:
+      test: ["CMD", "psql", "-U", "k6", "-c", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     ports:
       - "5432:5432"
     environment:

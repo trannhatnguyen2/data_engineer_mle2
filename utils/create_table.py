@@ -11,7 +11,31 @@ def main():
         password=os.getenv("POSTGRES_PASSWORD"),
     )
 
-    create_table_query = """
+    create_table_iot = """
+        CREATE TABLE IF NOT EXISTS iot.taxi_nyc_time_series( 
+            VendorID                INT, 
+            tpep_pickup_datetime    TIMESTAMP WITHOUT TIME ZONE, 
+            tpep_dropoff_datetime   TIMESTAMP WITHOUT TIME ZONE, 
+            passenger_count         FLOAT, 
+            trip_distance           FLOAT, 
+            RatecodeID              FLOAT, 
+            store_and_fwd_flag      VARCHAR, 
+            PULocationID            INT, 
+            DOLocationID            INT, 
+            payment_type            INT, 
+            fare_amount             FLOAT, 
+            extra                   FLOAT, 
+            mta_tax                 FLOAT, 
+            tip_amount              FLOAT, 
+            tolls_amount            FLOAT, 
+            improvement_surcharge   FLOAT, 
+            total_amount            FLOAT, 
+            congestion_surcharge    FLOAT, 
+            Airport_fee             FLOAT
+        );
+    """
+
+    create_table_staging = """
         CREATE TABLE IF NOT EXISTS staging.nyc_taxi (
             year                    VARCHAR,
             month                   VARCHAR,
@@ -19,7 +43,7 @@ def main():
             vendor_id               INT, 
             rate_code_id            FLOAT, 
             pickup_location_id      INT, 
-            dropoff_location_id      INT, 
+            dropoff_location_id     INT, 
             payment_type_id         INT, 
             service_type            INT,
             pickup_datetime         TIMESTAMP WITHOUT TIME ZONE, 
@@ -41,7 +65,8 @@ def main():
         );
     """
     try:
-        pc.execute_query(create_table_query)
+        pc.execute_query(create_table_iot)
+        pc.execute_query(create_table_staging)
     except Exception as e:
         print(f"Failed to create table with error: {e}")
 

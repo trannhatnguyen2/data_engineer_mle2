@@ -4,10 +4,15 @@ dotenv.load_dotenv(".env")
 
 from pyspark.sql import SparkSession
 
+###############################################
+# Parameters & Arguments
+###############################################
 MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT")
 MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY")
 MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY")
 BUCKET_NAME = os.getenv("BUCKET_NAME")
+###############################################
+
 
 spark = (SparkSession.builder.config("spark.executor.memory", "4g") \
                         .config(
@@ -25,7 +30,7 @@ spark = (SparkSession.builder.config("spark.executor.memory", "4g") \
                         .getOrCreate()
         )
 
-file_name = 'part-00000-1901bb1b-7f67-41e0-be8d-2789445f831c-c000.snappy.parquet'
+file_name = 'part-00000-fa5ff503-a19d-4931-bf87-a3495045c243-c000.snappy.parquet'
 file_path = f's3a://{BUCKET_NAME}/stream/'
 
 df = spark.read.parquet(file_path)

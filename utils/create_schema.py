@@ -12,11 +12,14 @@ def main():
         password=os.getenv("POSTGRES_PASSWORD"),
     )
 
+    create_iot_schema = """CREATE SCHEMA IF NOT EXISTS iot;"""
+
     create_staging_schema = """CREATE SCHEMA IF NOT EXISTS staging;"""
 
     create_dw_schema = """CREATE SCHEMA IF NOT EXISTS dw;"""
 
     try:
+        pc.execute_query(create_iot_schema)
         pc.execute_query(create_staging_schema)
         pc.execute_query(create_dw_schema)
     except Exception as e:

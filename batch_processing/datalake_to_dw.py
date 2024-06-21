@@ -9,6 +9,7 @@ dotenv.load_dotenv(".env")
 
 from pyspark import SparkConf, SparkContext
 from minio_utils import list_parquet_files
+from helpers import load_cfg
 
 logging.basicConfig(level=logging.INFO, 
                     format='%(asctime)s:%(funcName)s:%(levelname)s:%(message)s')
@@ -23,13 +24,20 @@ POSTGRES_DB = os.getenv("POSTGRES_DB")
 POSTGRES_HOST = os.getenv("POSTGRES_HOST")
 DB_STAGING_TABLE = os.getenv("DB_STAGING_TABLE")
 
-MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT")
-MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY")
-MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY")
-BUCKET_NAME = os.getenv("BUCKET_NAME")
+CFG_FILE = "./config/datalake.yaml"
+cfg = load_cfg(CFG_FILE)
+datalake_cfg = cfg["datalake"]
+
+MINIO_ENDPOINT = datalake_cfg["endpoint"]
+MINIO_ACCESS_KEY = datalake_cfg["access_key"]
+MINIO_SECRET_KEY = datalake_cfg["secret_key"]
+BUCKET_NAME = datalake_cfg['bucket_name_2']
 ###############################################
 
 
+###############################################
+# PySpark
+###############################################
 def create_spark_session():
     """
         Create the Spark Session with suitable configs
@@ -134,9 +142,14 @@ def load_to_staging_table(df):
     }
 
     # write data to PostgreSQL
-    df.write.jdbc(url=URL, table= DB_STAGING_TABLE, mode='append', properties=properties)
+    # df.write.jdbc(url=URL, table= DB_STAGING_TABLE, mode='append', properties=properties)
+    df.write.jdbc(url=URL, table= 'staging.nyc_taxi_test', mode='append', properties=properties)
+###############################################
 
 
+###############################################
+# Main
+###############################################
 if __name__ == "__main__":
     start_time = time.time()
 
@@ -156,3 +169,4 @@ if __name__ == "__main__":
 
     logging.info(f"Time to process: {time.time() - start_time}")
     logging.info("Batch processing successfully!")
+###############################################

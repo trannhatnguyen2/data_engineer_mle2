@@ -64,28 +64,39 @@ import pandas as pd
 
 
 
-from pyspark.sql import SparkSession
+# from pyspark.sql import SparkSession
 
-spark = (SparkSession.builder.config("spark.executor.memory", "4g") \
-                        .config(
-                            "spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.8.2"
-                        )
-                        .config("spark.hadoop.fs.s3a.access.key", "minio_access_key")
-                        .config("spark.hadoop.fs.s3a.secret.key", "minio_secret_key")
-                        .config("spark.hadoop.fs.s3a.endpoint", "localhost:9000")
-                        .config("spark.hadoop.fs.s3a.aws.credentials.provider", "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider")
-                        .config("spark.hadoop.fs.s3a.path.style.access", "true")
-                        .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false")
-                        .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
-                        .config("spark.sql.execution.arrow.pyspark.enabled", "true")
-                        .appName("Read Parquet file")
-                        .getOrCreate()
-        )
+# spark = (SparkSession.builder.config("spark.executor.memory", "4g") \
+#                         .config(
+#                             "spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.8.2"
+#                         )
+#                         .config("spark.hadoop.fs.s3a.access.key", "minio_access_key")
+#                         .config("spark.hadoop.fs.s3a.secret.key", "minio_secret_key")
+#                         .config("spark.hadoop.fs.s3a.endpoint", "localhost:9000")
+#                         .config("spark.hadoop.fs.s3a.aws.credentials.provider", "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider")
+#                         .config("spark.hadoop.fs.s3a.path.style.access", "true")
+#                         .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false")
+#                         .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
+#                         .config("spark.sql.execution.arrow.pyspark.enabled", "true")
+#                         .appName("Read Parquet file")
+#                         .getOrCreate()
+#         )
 
-file_name = 'yellow_tripdata_2022-02.parquet'
-file_path = f's3a://datalake/batch/yellow_tripdata_2022-02.parquet'
+# file_name = 'yellow_tripdata_2022-02.parquet'
+# file_path = f's3a://datalake/batch/yellow_tripdata_2022-02.parquet'
 
-df = spark.read.parquet(file_path)
-# df.show()
-print(df.count())
-df.printSchema()
+# df = spark.read.parquet(file_path)
+# # df.show()
+# print(df.count())
+# df.printSchema()
+
+from pyarrow.parquet import ParquetFile
+import pyarrow as pa 
+
+pf = ParquetFile("./data/2024/yellow_tripdata_2024-01.parquet") 
+first_ten_rows = next(pf.iter_batches(batch_size = 100)) 
+df = pa.Table.from_batches([first_ten_rows]).to_pandas() 
+print(df)
+
+for _, row in df.iterrows():
+    print(row)

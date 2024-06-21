@@ -29218,3 +29218,670 @@ File Path                                                             PID  Runti
 /opt/airflow/dags/delta_dag.py                                                               1           0  0.50s           2024-06-19T18:55:19
 ================================================================================
 [2024-06-19T18:56:17.253+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-06-20T17:48:39.980+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2024-06-20T17:48:39.981+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2024-06-20T17:48:39.981+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-06-20T17:48:39.981+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2024-06-20T17:48:39.987+0000] {manager.py:762} INFO - There are 8 files in /opt/airflow/dags
+[2024-06-20T17:48:55.638+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/elt_pipeline_dag.py                                  43  0.04s             0           0
+/opt/airflow/dags/delta_dag.py                                         44  0.03s             0           0
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0
+================================================================================
+[2024-06-20T17:49:26.489+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  15.89s          2024-06-20T17:49:12
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.29s           2024-06-20T17:48:56
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T17:49:12
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.06s           2024-06-20T17:48:56
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.29s           2024-06-20T17:49:13
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.07s           2024-06-20T17:49:12
+/opt/airflow/dags/elt_pipeline_dag.py                                  60  0.02s             1           0  0.63s           2024-06-20T17:48:56
+/opt/airflow/dags/delta_dag.py                                         61  0.01s             1           0  0.53s           2024-06-20T17:48:56
+================================================================================
+[2024-06-20T17:49:59.115+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  15.92s          2024-06-20T17:49:59
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.28s           2024-06-20T17:49:27
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T17:49:43
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-20T17:49:27
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar        76  0.10s             0           0  1.29s           2024-06-20T17:49:13
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.07s           2024-06-20T17:49:43
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.56s           2024-06-20T17:49:27
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.36s           2024-06-20T17:49:26
+================================================================================
+[2024-06-20T17:50:29.525+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                              91  0.01s             0           0  15.92s          2024-06-20T17:49:59
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.17s           2024-06-20T17:50:00
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.08s           2024-06-20T17:50:14
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-20T17:50:00
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.23s           2024-06-20T17:50:00
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-20T17:50:14
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.58s           2024-06-20T17:49:59
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.23s           2024-06-20T17:49:59
+================================================================================
+[2024-06-20T17:51:00.136+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                             115  0.01s             0           0  0.59s           2024-06-20T17:50:30
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.17s           2024-06-20T17:50:30
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.05s           2024-06-20T17:50:47
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-20T17:50:30
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.23s           2024-06-20T17:50:48
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.07s           2024-06-20T17:50:47
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  16.83s          2024-06-20T17:50:46
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.28s           2024-06-20T17:50:30
+================================================================================
+[2024-06-20T17:51:34.399+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.46s           2024-06-20T17:51:00
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.21s           2024-06-20T17:51:00
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.06s           2024-06-20T17:51:17
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.04s           2024-06-20T17:51:00
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar       131  0.09s             0           0  1.23s           2024-06-20T17:50:48
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.07s           2024-06-20T17:51:17
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.53s           2024-06-20T17:51:17
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.30s           2024-06-20T17:51:00
+================================================================================
+[2024-06-20T17:52:05.128+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.58s           2024-06-20T17:51:35
+/opt/airflow/dags/scripts/convert_to_delta.py                         149  0.01s             0           0  0.24s           2024-06-20T17:51:34
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T17:51:48
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.07s           2024-06-20T17:51:35
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.32s           2024-06-20T17:51:35
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-20T17:51:47
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.52s           2024-06-20T17:51:48
+/opt/airflow/dags/delta_dag.py                                        148  0.02s             1           0  0.32s           2024-06-20T17:51:34
+================================================================================
+[2024-06-20T17:52:35.311+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.48s           2024-06-20T17:52:06
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.44s           2024-06-20T17:52:05
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.05s           2024-06-20T17:52:22
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  15.84s          2024-06-20T17:52:21
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.37s           2024-06-20T17:52:23
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.04s           2024-06-20T17:52:22
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.59s           2024-06-20T17:52:22
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.51s           2024-06-20T17:52:05
+================================================================================
+[2024-06-20T17:53:13.157+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.45s           2024-06-20T17:52:37
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.15s           2024-06-20T17:52:36
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.06s           2024-06-20T17:52:53
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.07s           2024-06-20T17:52:52
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar       181  0.09s             0           0  1.37s           2024-06-20T17:52:23
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.05s           2024-06-20T17:52:53
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  19.94s          2024-06-20T17:53:13
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.22s           2024-06-20T17:52:36
+================================================================================
+[2024-06-20T17:53:40.695+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2024-06-20T17:53:40.708+0000] {manager.py:762} INFO - There are 8 files in /opt/airflow/dags
+[2024-06-20T17:53:56.645+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.73s           2024-06-20T17:53:14
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.16s           2024-06-20T17:53:13
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.04s           2024-06-20T17:53:23
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.04s           2024-06-20T17:53:22
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.17s           2024-06-20T17:53:14
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.07s           2024-06-20T17:53:23
+/opt/airflow/dags/elt_pipeline_dag.py                                 198  0.01s             1           0  0.66s           2024-06-20T17:53:22
+/opt/airflow/dags/delta_dag.py                                        199  0.01s             1           0  0.30s           2024-06-20T17:53:13
+================================================================================
+[2024-06-20T17:54:26.762+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  15.56s          2024-06-20T17:54:12
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.17s           2024-06-20T17:53:57
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T17:54:12
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-20T17:53:57
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.18s           2024-06-20T17:54:13
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-20T17:54:12
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.49s           2024-06-20T17:53:57
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.22s           2024-06-20T17:53:56
+================================================================================
+[2024-06-20T17:54:59.547+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.34s           2024-06-20T17:54:43
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.19s           2024-06-20T17:54:27
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.05s           2024-06-20T17:54:43
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-20T17:54:27
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar       231  0.11s             0           0  1.18s           2024-06-20T17:54:13
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.05s           2024-06-20T17:54:43
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.63s           2024-06-20T17:54:27
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.25s           2024-06-20T17:54:27
+================================================================================
+[2024-06-20T17:55:29.990+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.38s           2024-06-20T17:55:14
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.18s           2024-06-20T17:55:00
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.05s           2024-06-20T17:55:13
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.06s           2024-06-20T17:55:00
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.25s           2024-06-20T17:55:00
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.05s           2024-06-20T17:55:13
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.52s           2024-06-20T17:55:00
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.20s           2024-06-20T17:55:00
+================================================================================
+[2024-06-20T17:56:00.199+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.43s           2024-06-20T17:55:46
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.15s           2024-06-20T17:55:30
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T17:55:47
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  15.68s          2024-06-20T17:55:46
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.38s           2024-06-20T17:55:47
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.05s           2024-06-20T17:55:46
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.43s           2024-06-20T17:55:30
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.20s           2024-06-20T17:55:30
+================================================================================
+[2024-06-20T17:56:33.239+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  15.75s          2024-06-20T17:56:33
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.19s           2024-06-20T17:56:01
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.04s           2024-06-20T17:56:17
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-20T17:56:16
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar       288  0.09s             0           0  1.38s           2024-06-20T17:55:47
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-20T17:56:17
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.60s           2024-06-20T17:56:01
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.23s           2024-06-20T17:56:00
+================================================================================
+[2024-06-20T17:57:03.494+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                             303  0.01s             0           0  15.75s          2024-06-20T17:56:33
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.17s           2024-06-20T17:56:34
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.04s           2024-06-20T17:56:48
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-20T17:56:47
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.25s           2024-06-20T17:56:34
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.07s           2024-06-20T17:56:48
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.43s           2024-06-20T17:56:33
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.25s           2024-06-20T17:56:33
+================================================================================
+[2024-06-20T17:57:34.276+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                             320  0.01s             0           0  0.38s           2024-06-20T17:57:03
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.17s           2024-06-20T17:57:04
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.08s           2024-06-20T17:57:20
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.06s           2024-06-20T17:57:19
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.47s           2024-06-20T17:57:21
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-20T17:57:20
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.42s           2024-06-20T17:57:04
+/opt/airflow/dags/delta_dag.py                                                               1           0  15.56s          2024-06-20T17:57:19
+================================================================================
+[2024-06-20T17:58:10.111+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.49s           2024-06-20T17:57:34
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.15s           2024-06-20T17:57:34
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.06s           2024-06-20T17:57:50
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.06s           2024-06-20T17:57:50
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar       336  0.11s             0           0  1.47s           2024-06-20T17:57:21
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.04s           2024-06-20T17:57:50
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.62s           2024-06-20T17:57:34
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.48s           2024-06-20T17:57:50
+================================================================================
+[2024-06-20T17:58:40.613+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.37s           2024-06-20T17:58:11
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.17s           2024-06-20T17:58:11
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T17:58:21
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.09s           2024-06-20T17:58:20
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.26s           2024-06-20T17:58:11
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-20T17:58:20
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.61s           2024-06-20T17:58:15
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.23s           2024-06-20T17:58:21
+================================================================================
+[2024-06-20T17:58:41.617+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2024-06-20T17:58:41.622+0000] {manager.py:762} INFO - There are 8 files in /opt/airflow/dags
+[2024-06-20T17:59:13.764+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  15.74s          2024-06-20T17:59:13
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.15s           2024-06-20T17:58:58
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T17:58:21
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.04s           2024-06-20T17:58:58
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar       369  0.10s             0           0  1.26s           2024-06-20T17:58:11
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-20T17:58:20
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.48s           2024-06-20T17:58:58
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.20s           2024-06-20T17:58:57
+================================================================================
+[2024-06-20T17:59:43.982+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                             384  0.07s             0           0  15.74s          2024-06-20T17:59:13
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.16s           2024-06-20T17:59:28
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.06s           2024-06-20T17:59:14
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.04s           2024-06-20T17:59:28
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.43s           2024-06-20T17:59:15
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                  385  0.01s             0           0  0.07s           2024-06-20T17:59:13
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.56s           2024-06-20T17:59:28
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.23s           2024-06-20T17:59:28
+================================================================================
+[2024-06-20T18:00:13.999+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.52s           2024-06-20T17:59:44
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.16s           2024-06-20T18:00:01
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.06s           2024-06-20T17:59:44
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.06s           2024-06-20T18:00:01
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.21s           2024-06-20T18:00:01
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-20T17:59:44
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.50s           2024-06-20T18:00:01
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.21s           2024-06-20T18:00:01
+================================================================================
+[2024-06-20T18:00:49.442+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.55s           2024-06-20T18:00:15
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.16s           2024-06-20T18:00:32
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T18:00:15
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  16.93s          2024-06-20T18:00:49
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar       417  0.09s             0           0  1.21s           2024-06-20T18:00:01
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.08s           2024-06-20T18:00:15
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.86s           2024-06-20T18:00:32
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.21s           2024-06-20T18:00:32
+================================================================================
+[2024-06-20T18:01:19.787+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.54s           2024-06-20T18:00:51
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.31s           2024-06-20T18:01:03
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.12s           2024-06-20T18:00:51
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar    433  0.01s             0           0  16.93s          2024-06-20T18:00:49
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.33s           2024-06-20T18:00:50
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.07s           2024-06-20T18:00:51
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  1.53s           2024-06-20T18:00:50
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.35s           2024-06-20T18:01:03
+================================================================================
+[2024-06-20T18:01:50.185+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.58s           2024-06-20T18:01:38
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.22s           2024-06-20T18:01:37
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T18:01:38
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar    450  0.01s             0           0  0.07s           2024-06-20T18:01:19
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.54s           2024-06-20T18:01:37
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-20T18:01:37
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.72s           2024-06-20T18:01:37
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.42s           2024-06-20T18:01:37
+================================================================================
+[2024-06-20T18:02:23.800+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.58s           2024-06-20T18:01:38
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.17s           2024-06-20T18:02:08
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T18:01:38
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-20T18:01:50
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar       462  0.09s             0           0  1.54s           2024-06-20T18:01:37
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-20T18:01:37
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.60s           2024-06-20T18:02:07
+/opt/airflow/dags/delta_dag.py                                                               1           0  15.94s          2024-06-20T18:02:23
+================================================================================
+[2024-06-20T18:02:54.613+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                             479  0.01s             0           0  0.41s           2024-06-20T18:02:24
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.15s           2024-06-20T18:02:38
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.06s           2024-06-20T18:02:24
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.04s           2024-06-20T18:02:24
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.15s           2024-06-20T18:02:24
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.04s           2024-06-20T18:02:24
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.58s           2024-06-20T18:02:38
+/opt/airflow/dags/delta_dag.py                                        478  0.03s             1           0  15.94s          2024-06-20T18:02:23
+================================================================================
+[2024-06-20T18:03:25.093+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                             496  0.01s             0           0  0.38s           2024-06-20T18:02:54
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.15s           2024-06-20T18:03:11
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T18:02:55
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-20T18:02:54
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.23s           2024-06-20T18:03:11
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.08s           2024-06-20T18:02:55
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.69s           2024-06-20T18:03:11
+/opt/airflow/dags/delta_dag.py                                        495  0.02s             1           0  0.23s           2024-06-20T18:02:54
+================================================================================
+[2024-06-20T18:03:41.633+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2024-06-20T18:03:41.639+0000] {manager.py:762} INFO - There are 8 files in /opt/airflow/dags
+[2024-06-20T18:03:57.110+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.69s           2024-06-20T18:03:25
+/opt/airflow/dags/scripts/convert_to_delta.py                         511  0.01s             0           0  0.15s           2024-06-20T18:03:11
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.05s           2024-06-20T18:03:25
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-20T18:03:25
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.23s           2024-06-20T18:03:11
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.07s           2024-06-20T18:03:25
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.50s           2024-06-20T18:03:28
+/opt/airflow/dags/delta_dag.py                                        510  0.02s             1           0  0.33s           2024-06-20T18:03:25
+================================================================================
+[2024-06-20T18:04:27.198+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  17.20s          2024-06-20T18:04:14
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.18s           2024-06-20T18:03:57
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-20T18:04:14
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.06s           2024-06-20T18:03:57
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.61s           2024-06-20T18:04:15
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-20T18:04:14
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  1.39s           2024-06-20T18:04:16
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.24s           2024-06-20T18:03:57
+================================================================================
+[2024-06-20T18:04:27.512+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-06-21T03:43:52.198+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2024-06-21T03:43:52.199+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2024-06-21T03:43:52.199+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-06-21T03:43:52.199+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2024-06-21T03:43:52.208+0000] {manager.py:762} INFO - There are 8 files in /opt/airflow/dags
+[2024-06-21T03:44:08.310+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/elt_pipeline_dag.py                                  42  0.04s             0           0
+/opt/airflow/dags/delta_dag.py                                         43  0.03s             0           0
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0
+================================================================================
+[2024-06-21T03:44:38.608+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.33s           2024-06-21T03:44:09
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.27s           2024-06-21T03:44:09
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.05s           2024-06-21T03:44:27
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  16.66s          2024-06-21T03:44:26
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.45s           2024-06-21T03:44:27
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.04s           2024-06-21T03:44:27
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.64s           2024-06-21T03:44:27
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.54s           2024-06-21T03:44:08
+================================================================================
+[2024-06-21T03:45:14.053+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.53s           2024-06-21T03:44:40
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.31s           2024-06-21T03:44:39
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.05s           2024-06-21T03:44:27
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.07s           2024-06-21T03:44:56
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar        84  0.10s             0           0  1.45s           2024-06-21T03:44:27
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.04s           2024-06-21T03:44:27
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  16.45s          2024-06-21T03:45:14
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.33s           2024-06-21T03:44:39
+================================================================================
+[2024-06-21T03:45:44.485+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.84s           2024-06-21T03:45:15
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.17s           2024-06-21T03:45:14
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.05s           2024-06-21T03:45:15
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.04s           2024-06-21T03:45:27
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.28s           2024-06-21T03:45:15
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                  100  0.01s             0           0  0.05s           2024-06-21T03:45:14
+/opt/airflow/dags/elt_pipeline_dag.py                                  99  0.09s             1           0  16.45s          2024-06-21T03:45:14
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.36s           2024-06-21T03:45:14
+================================================================================
+[2024-06-21T03:46:14.911+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  1.66s           2024-06-21T03:46:03
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.21s           2024-06-21T03:45:45
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.04s           2024-06-21T03:46:01
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.07s           2024-06-21T03:46:03
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.46s           2024-06-21T03:46:03
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                  118  0.01s             0           0  0.08s           2024-06-21T03:45:44
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.93s           2024-06-21T03:46:04
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.43s           2024-06-21T03:45:44
+================================================================================
+[2024-06-21T03:46:48.732+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  1.66s           2024-06-21T03:46:03
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.17s           2024-06-21T03:46:16
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.04s           2024-06-21T03:46:32
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.07s           2024-06-21T03:46:03
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar       129  0.10s             0           0  1.46s           2024-06-21T03:46:03
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.05s           2024-06-21T03:46:14
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.93s           2024-06-21T03:46:04
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.20s           2024-06-21T03:46:16
+================================================================================
+[2024-06-21T03:47:19.534+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.48s           2024-06-21T03:46:50
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.29s           2024-06-21T03:46:50
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.07s           2024-06-21T03:47:02
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.06s           2024-06-21T03:46:50
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.42s           2024-06-21T03:46:50
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.05s           2024-06-21T03:46:50
+/opt/airflow/dags/elt_pipeline_dag.py                                 146  0.01s             1           0  0.69s           2024-06-21T03:46:49
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.38s           2024-06-21T03:46:49
+================================================================================
+[2024-06-21T03:47:49.801+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.44s           2024-06-21T03:47:36
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.19s           2024-06-21T03:47:35
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.04s           2024-06-21T03:47:36
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.04s           2024-06-21T03:47:36
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.35s           2024-06-21T03:47:36
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.05s           2024-06-21T03:47:36
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.53s           2024-06-21T03:47:20
+/opt/airflow/dags/delta_dag.py                                                               1           0  15.42s          2024-06-21T03:47:35
+================================================================================
+[2024-06-21T03:48:22.593+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  15.55s          2024-06-21T03:48:22
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.14s           2024-06-21T03:48:06
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.04s           2024-06-21T03:47:36
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-21T03:48:07
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar       177  0.09s             0           0  1.35s           2024-06-21T03:47:36
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.05s           2024-06-21T03:47:36
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.57s           2024-06-21T03:47:51
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.21s           2024-06-21T03:48:06
+================================================================================
+[2024-06-21T03:48:52.890+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2024-06-21T03:48:52.902+0000] {manager.py:762} INFO - There are 8 files in /opt/airflow/dags
+[2024-06-21T03:49:08.560+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  15.55s          2024-06-21T03:48:22
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.20s           2024-06-21T03:48:36
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.05s           2024-06-21T03:48:22
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.06s           2024-06-21T03:48:37
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.22s           2024-06-21T03:48:23
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.07s           2024-06-21T03:48:22
+/opt/airflow/dags/elt_pipeline_dag.py                                 192  0.01s             1           0  0.64s           2024-06-21T03:48:23
+/opt/airflow/dags/delta_dag.py                                        193  0.01s             1           0  0.26s           2024-06-21T03:48:36
+================================================================================
+[2024-06-21T03:49:38.722+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  15.50s          2024-06-21T03:49:24
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.17s           2024-06-21T03:49:08
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.04s           2024-06-21T03:49:24
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.05s           2024-06-21T03:49:09
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.29s           2024-06-21T03:49:25
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-21T03:49:24
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.48s           2024-06-21T03:49:09
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.23s           2024-06-21T03:49:08
+================================================================================
+[2024-06-21T03:50:12.240+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.51s           2024-06-21T03:49:55
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.15s           2024-06-21T03:49:40
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.04s           2024-06-21T03:49:55
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.04s           2024-06-21T03:49:40
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar       225  0.12s             0           0  1.29s           2024-06-21T03:49:25
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.07s           2024-06-21T03:49:55
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.59s           2024-06-21T03:49:40
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.23s           2024-06-21T03:49:39
+================================================================================
+[2024-06-21T03:50:42.513+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/scripts/elt_pipeline.py                                                    0           0  0.54s           2024-06-21T03:50:26
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0  0.26s           2024-06-21T03:50:13
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0  0.04s           2024-06-21T03:50:26
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0  0.06s           2024-06-21T03:50:13
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0  1.89s           2024-06-21T03:50:14
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0  0.06s           2024-06-21T03:50:26
+/opt/airflow/dags/elt_pipeline_dag.py                                                        1           0  0.95s           2024-06-21T03:50:13
+/opt/airflow/dags/delta_dag.py                                                               1           0  0.26s           2024-06-21T03:50:13
+================================================================================
+[2024-06-21T03:51:01.964+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-06-21T03:51:01.964+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-06-21T03:51:02.239+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15

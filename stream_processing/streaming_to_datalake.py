@@ -14,11 +14,19 @@ logging.basicConfig(level=logging.INFO,
             
 warnings.filterwarnings('ignore')
 
+###############################################
+# Parameters & Arguments
+###############################################
 MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT")
 MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY")
 MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY")
 BUCKET_NAME = os.getenv("BUCKET_NAME")
+###############################################
 
+
+###############################################
+# PySpark
+###############################################
 def create_spark_session():
     """
         Create the Spark Session with suitable configs
@@ -60,7 +68,7 @@ def create_initial_dataframe(spark_session):
             .readStream
             .format("kafka")
             .option("kafka.bootstrap.servers", "localhost:9092")
-            .option("subscribe", "nyc_taxi_device")
+            .option("subscribe", "device.iot.taxi_nyc_time_series")
             # .option("startingOffsets", "earliest")
             .option("failOnDataLoss", "false")
             .load())
@@ -75,10 +83,10 @@ def create_final_dataframe(df, spark_session):
     """
         Modifies the initial dataframe, and creates the final dataframe
     """
-    from pyspark.sql.types import IntegerType, StringType, StructType, StructField, TimestampNTZType, DoubleType
+    from pyspark.sql.types import IntegerType, StringType, StructType, StructField, TimestampNTZType, DoubleType, LongType
     from pyspark.sql.functions import col, from_json, udf
 
-    data_schema = StructType([
+    payload_after_schema = StructType([
             StructField("dolocationid", IntegerType(), True),
             StructField("pulocationid", IntegerType(), True),
             StructField("ratecodeid", DoubleType(), True),
@@ -93,14 +101,24 @@ def create_final_dataframe(df, spark_session):
             StructField("tip_amount", DoubleType(), True),
             StructField("tolls_amount", DoubleType(), True),
             StructField("total_amount", DoubleType(), True),
-            StructField("dropoff_datetime", TimestampNTZType(), True),
-            StructField("pickup_datetime", TimestampNTZType(), True),
+            StructField("tpep_dropoff_datetime", LongType(), True),
+            StructField("tpep_pickup_datetime", LongType(), True),
             StructField("trip_distance", DoubleType(), True)
+    ])
+
+    data_schema = StructType([
+        StructField("payload", StructType([
+            StructField("after", payload_after_schema, True)
+        ]), True)
     ])
 
     parsed_df = df.selectExpr("CAST(value AS STRING) as json") \
                 .select(from_json(col("json"), data_schema).alias("data")) \
-                .select("data.*")
+                .select("data.payload.after.*")
+
+    parsed_df = parsed_df \
+        .withColumn("tpep_pickup_datetime", (col("tpep_pickup_datetime") / 1000000).cast("timestamp")) \
+        .withColumn("tpep_dropoff_datetime", (col("tpep_dropoff_datetime") / 1000000).cast("timestamp"))
 
     parsed_df.createOrReplaceTempView("nyc_taxi_view")
 
@@ -126,11 +144,15 @@ def start_streaming(df):
                         .option("checkpointLocation", f"s3a://{BUCKET_NAME}/stream/checkpoint") \
                         .start() 
     return stream_query.awaitTermination()
+###############################################
 
 
+###############################################
+# Main
+###############################################
 if __name__ == '__main__':
     spark = create_spark_session()
     df = create_initial_dataframe(spark)
     df_final = create_final_dataframe(df, spark)
     start_streaming(df_final)
-
+###############################################

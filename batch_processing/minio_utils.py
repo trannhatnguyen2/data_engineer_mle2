@@ -5,7 +5,6 @@ CFG_FILE = "./config/datalake.yaml"
 
 cfg = load_cfg(CFG_FILE)
 datalake_cfg = cfg["datalake"]
-nyc_data_cfg = cfg["nyc_data"]
 
 minio_client = Minio(
     endpoint=datalake_cfg["endpoint"],

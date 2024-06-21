@@ -20,11 +20,11 @@ def main():
     )
 
     # Create bucket if not exist
-    found = client.bucket_exists(bucket_name=datalake_cfg["bucket_name"])
+    found = client.bucket_exists(bucket_name=datalake_cfg["bucket_name_1"])
     if not found:
-        client.make_bucket(bucket_name=datalake_cfg["bucket_name"])
+        client.make_bucket(bucket_name=datalake_cfg["bucket_name_1"])
     else:
-        print(f"Bucket {datalake_cfg['bucket_name']} already exists, skip creating!")
+        print(f"Bucket {datalake_cfg['bucket_name_1']} already exists, skip creating!")
 
     for year in YEARS:
         # Upload files
@@ -33,7 +33,7 @@ def main():
         for fp in all_fps:
             print(f"Uploading {fp}")
             client.fput_object(
-                bucket_name=datalake_cfg["bucket_name"],
+                bucket_name=datalake_cfg["bucket_name_1"],
                 object_name=os.path.join(datalake_cfg["folder_name"], os.path.basename(fp)),
                 file_path=fp,
             )

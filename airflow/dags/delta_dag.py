@@ -5,7 +5,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 
-from scripts.convert_to_delta_final import main_convert
+from scripts.convert_to_delta import main_convert
 
 # Default arguments for the DAG
 default_args = {

@@ -10,7 +10,6 @@ sys.path.append("/opt/airflow/dags/scripts/")
 from helpers import load_cfg
 
 from pyspark import SparkConf, SparkContext
-from delta import *
 
 logging.basicConfig(level=logging.INFO, 
                     format='%(asctime)s:%(funcName)s:%(levelname)s:%(message)s')
@@ -75,87 +74,56 @@ def list_parquet_files(bucket_name, prefix=""):
 ###############################################
 # PySpark
 ###############################################
-def create_spark_session():
-    """
-        Create the Spark Session with suitable configs
-    """
+def main_convert():
     from pyspark.sql import SparkSession
+    from delta.pip_utils import configure_spark_with_delta_pip
 
-    try:
-        builder = SparkSession.builder \
+    jars = "jars/hadoop-aws-3.3.4.jar,jars/aws-java-sdk-bundle-1.12.262.jar"
+
+    builder = SparkSession.builder \
                     .appName("Converting to Delta Lake") \
                     .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
-                    .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
+                    .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
+                    .config("spark.jars", jars)
         
-        spark = configure_spark_with_delta_pip(builder, extra_packages=["org.apache.hadoop:hadoop-aws-3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.262"]).getOrCreate()
+    spark = configure_spark_with_delta_pip(builder, extra_packages=["org.apache.hadoop:hadoop-aws:3.3.4"]).getOrCreate()
 
-        logging.info('Spark session successfully created!')
+    sc = spark.sparkContext
 
-    except Exception as e:
-        traceback.print_exc(file=sys.stderr)
-        logging.error(f"Couldn't create the spark session due to exception: {e}")
+    sc._jsc.hadoopConfiguration().set("fs.s3a.access.key", "minio_access_key")
+    sc._jsc.hadoopConfiguration().set("fs.s3a.secret.key", "minio_secret_key")
+    sc._jsc.hadoopConfiguration().set("fs.s3a.endpoint", "http://minio:9000")
+    sc._jsc.hadoopConfiguration().set("fs.s3a.aws.credentials.provider", "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider")
+    sc._jsc.hadoopConfiguration().set("fs.s3a.path.style.access", "true")
+    sc._jsc.hadoopConfiguration().set("fs.s3a.connection.ssl.enabled", "false")
+    sc._jsc.hadoopConfiguration().set("fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
+    sc._jsc.hadoopConfiguration().set("fs.s3a.connection.ssl.enabled", "false")
 
-    return spark
+    logging.info('Spark session successfully created!')
 
+    # Create bucket 'delta'
+    cfg = load_cfg(CFG_FILE)
+    datalake_cfg = cfg["datalake"]
+    create_bucket(datalake_cfg['bucket_name_3'])
 
-def load_minio_config(spark_context: SparkContext):
-    """
-        Establish the necessary configurations to access to MinIO
-    """
-    try:
-        spark_context._jsc.hadoopConfiguration().set("fs.s3a.access.key", "minio_access_key")
-        spark_context._jsc.hadoopConfiguration().set("fs.s3a.secret.key", "minio_secret_key")
-        spark_context._jsc.hadoopConfiguration().set("fs.s3a.endpoint", "http://minio:9000")
-        spark_context._jsc.hadoopConfiguration().set("fs.s3a.aws.credentials.provider", "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider")
-        spark_context._jsc.hadoopConfiguration().set("fs.s3a.path.style.access", "true")
-        spark_context._jsc.hadoopConfiguration().set("fs.s3a.connection.ssl.enabled", "false")
-        spark_context._jsc.hadoopConfiguration().set("fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
-        logging.info('MinIO configuration is created successfully')
-    except Exception as e:
-        traceback.print_exc(file=sys.stderr)
-        logging.warning(f"MinIO config could not be created successfully due to exception: {e}")
+    for file in list_parquet_files(datalake_cfg['bucket_name_2'], prefix=datalake_cfg['folder_name']):
+        print(file)
 
+        path_read = f"s3a://{datalake_cfg['bucket_name_2']}/" + file
+        logging.info(f"Reading parquet file: {file}")
 
-def main_convert():
-    # start_time = time.time()
+        df = spark.read.parquet(path_read)
 
-    # spark = create_spark_session()
-    # load_minio_config(spark.sparkContext)
+        print(df.count())
 
-    # # Create bucket 'delta'
-    # cfg = load_cfg(CFG_FILE)
-    # datalake_cfg = cfg["datalake"]
-    # create_bucket(datalake_cfg['bucket_name_3'])
+        # Save to bucket 'delta' 
+        path_read = f"s3a://{datalake_cfg['bucket_name_3']}/" + file
+        logging.info(f"Saving delta file: {file}")
 
-    # for file in list_parquet_files(datalake_cfg['bucket_name_2'], prefix=datalake_cfg['folder_name']):
-    #     print(file)
-
-    #     path = f"s3a://{datalake_cfg['bucket_name_2']}/" + file
-    #     logging.info(f"Reading parquet file: {file}")
-
-    #     df = spark.read.parquet(path)
-
-    from pyspark.sql import SparkSession
-
-    spark = (SparkSession.builder.config("spark.executor.memory", "4g") \
-                            .config(
-                                "spark.jars.packages", "org.apache.hadoop:hadoop-aws:3.3.4"
-                            )
-                            .config("spark.hadoop.fs.s3a.access.key", "minio_access_key")
-                            .config("spark.hadoop.fs.s3a.secret.key", "minio_secret_key")
-                            .config("spark.hadoop.fs.s3a.endpoint", "minio:9000")
-                            .config("spark.hadoop.fs.s3a.aws.credentials.provider", "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider")
-                            .config("spark.hadoop.fs.s3a.path.style.access", "true")
-                            .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false")
-                            .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
-                            .config("spark.sql.execution.arrow.pyspark.enabled", "true")
-                            .appName("Read Parquet file")
-                            .getOrCreate()
-            )
-
-    file_path = f's3a://raw/batch/yellow_tripdata_2022-03.parquet'
-
-    df = spark.read.parquet(file_path)
-    df.show()
-    print(df.count())
-    df.printSchema()
+        df_delta = df.write \
+                    .format("delta") \
+                    .mode("overwrite") \
+                    .save(f"s3a://{datalake_cfg['bucket_name_3']}/batch")
+        
+        logging.info("="*50 + "COMPLETELY" + "="*50)
+###############################################
