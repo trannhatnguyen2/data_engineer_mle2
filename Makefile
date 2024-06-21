@@ -1,6 +1,6 @@
 airflow_up:
 	docker compose -f airflow-docker-compose.yaml up -d --build
-airflow-down:
+airflow_down:
 	docker compose -f airflow-docker-compose.yaml down
 
 batch_up:
