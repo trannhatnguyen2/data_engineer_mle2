@@ -30,7 +30,7 @@ with trip_staging as (
         f.congestion_surcharge
 
     from 
-        staging.nyc_taxi_test as f
+        staging.nyc_taxi as f
     join 
         dw.dim_vendor as dv ON f.vendor_id = dv.vendor_id
     join

@@ -4,7 +4,7 @@ with service_type_staging as (
     select distinct
         service_type
     from 
-        staging.nyc_taxi_test
+        staging.nyc_taxi
     where 
         vendor_id is not null
 )

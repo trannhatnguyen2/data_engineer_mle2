@@ -4,7 +4,7 @@ with vendor_staging as (
     select distinct
         vendor_id
     from 
-        staging.nyc_taxi_test
+        staging.nyc_taxi
     where 
         vendor_id is not null
 )

@@ -6,7 +6,7 @@ with pickup_location as (
         pickup_latitude,
         pickup_longitude
     from 
-        staging.nyc_taxi_test
+        staging.nyc_taxi
     where 
         vendor_id is not null
 )

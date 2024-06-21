@@ -6,7 +6,7 @@ with dropoff_location as (
         dropoff_latitude,
         dropoff_longitude
     from 
-        staging.nyc_taxi_test
+        staging.nyc_taxi
     where 
         vendor_id is not null
 )

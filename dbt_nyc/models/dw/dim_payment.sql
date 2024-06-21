@@ -4,7 +4,7 @@ with payment_staging as (
     select distinct 
         payment_type_id
     from 
-        staging.nyc_taxi_test
+        staging.nyc_taxi
     where 
         vendor_id is not null
 )

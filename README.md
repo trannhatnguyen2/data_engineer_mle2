@@ -1,6 +1,6 @@
-# Big Data Project
+# NYC_TAXI Data Engineer Project - MLE2 - Module 2
 
-In today's data-driven landscape, analyzing extensive datasets is essential for deriving business insights. Our Taxi Data Analytics application leverages Spark, Kafka, and DBT to convert raw taxi trip data into actionable intelligence.
+In today's data-driven landscape, analyzing extensive datasets is essential for deriving business insights. Our Taxi Data Analytics application leverages Airflow, Spark, Delta Lake, Debezium, Kafka, DBT, and Great Expectations to convert raw taxi trip data into actionable intelligence.
 
 ## Challenge: Data Integration Issues
 
@@ -11,7 +11,7 @@ This fragmentation led to incomplete insights and impeded our capability to make
 ## System Architecture
 
 <p align="center">
-<img src="./imgs/bigdata-diagram.png" width=100% height=100%>
+<img src="./imgs/big-data-diagram.svg" width=100% height=100%>
 
 <p align="center">
     System Architecture
