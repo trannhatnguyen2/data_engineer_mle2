@@ -29885,3 +29885,24 @@ File Path                                                           PID    Runti
 [2024-06-21T03:51:01.964+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
 [2024-06-21T03:51:01.964+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
 [2024-06-21T03:51:02.239+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-06-21T12:30:09.292+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2024-06-21T12:30:09.293+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2024-06-21T12:30:09.293+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-06-21T12:30:09.293+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2024-06-21T12:30:09.305+0000] {manager.py:762} INFO - There are 8 files in /opt/airflow/dags
+[2024-06-21T12:30:25.952+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/elt_pipeline_dag.py                                  44  0.07s             0           0
+/opt/airflow/dags/delta_dag.py                                                               0           0
+/opt/airflow/dags/scripts/elt_pipeline.py                              43  0.15s             0           0
+/opt/airflow/dags/scripts/convert_to_delta.py                                                0           0
+/opt/airflow/dags/scripts/jars/hadoop-aws-3.3.4.jar                                          0           0
+/opt/airflow/dags/scripts/jars/spark-sql-kafka-0-10_2.12-3.2.1.jar                           0           0
+/opt/airflow/dags/scripts/jars/aws-java-sdk-bundle-1.12.262.jar                              0           0
+/opt/airflow/dags/scripts/jars/postgresql-42.4.3.jar                                         0           0
+================================================================================
+[2024-06-21T12:30:30.741+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15

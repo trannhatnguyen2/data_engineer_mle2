@@ -1,22 +1,16 @@
 import os
-import sys
 import pandas as pd
 from glob import glob
-from minio import Minio
-import time
-
-sys.path.append("/opt/airflow/dags/scripts/")
 from helpers import load_cfg
+from minio import Minio
 
 ###############################################
 # Parameters & Arguments
 ###############################################
-BASE_PATH = "/opt/airflow/"
-
-CFG_FILE = BASE_PATH + "config/datalake_airflow.yaml"
-DATA_PATH = BASE_PATH + "data/"
-TAXI_LOOKUP_PATH = BASE_PATH + "dags/scripts/data/taxi_lookup.csv"
-YEARS = ["2022"]
+DATA_PATH = "data/"
+YEARS = ["2022", "2023"]
+TAXI_LOOKUP_PATH = "src/data/taxi_lookup.csv"
+CFG_FILE =  "config/datalake.yaml"
 ###############################################
 
 
@@ -46,50 +40,7 @@ def create_bucket(bucket_name):
 
 
 ###############################################
-# Extract and Load
-###############################################
-def extract_load_to_datalake():
-    """
-        Extract data file and Load to Datalake (MinIO) at bucket 'datalake'
-    """
-    # Load minio config
-    cfg = load_cfg(CFG_FILE)
-    datalake_cfg = cfg["datalake"]
-    nyc_data_cfg = cfg["nyc_data"]
-
-    print(datalake_cfg)
-
-    # Create a client with the MinIO server
-    minio_client = Minio(
-        endpoint=datalake_cfg["endpoint"],
-        access_key=datalake_cfg["access_key"],
-        secret_key=datalake_cfg["secret_key"],
-        secure=False,
-    )
-
-    # Create bucket if not exist
-    found = minio_client.bucket_exists(bucket_name=datalake_cfg["bucket_name_1"])
-    if not found:
-        minio_client.make_bucket(bucket_name=datalake_cfg["bucket_name_1"])
-    else:
-        print(f"Bucket {datalake_cfg['bucket_name_1']} already exists, skip creating!")
-
-    for year in YEARS:
-        # Upload files
-        all_fps = glob(os.path.join(nyc_data_cfg["folder_path"], year, "*.parquet"))
-
-        for fp in all_fps:
-            print(f"Uploading {fp}")
-            minio_client.fput_object(
-                bucket_name=datalake_cfg["bucket_name_1"],
-                object_name=os.path.join(datalake_cfg["folder_name"], os.path.basename(fp)),
-                file_path=fp,
-            )
-###############################################
-
-
-###############################################
-# Transform
+# Process data
 ###############################################
 def drop_column(df, file):
     """
@@ -191,12 +142,14 @@ def process(df, file):
     print("Transformed data from file: " + file)
 
     return df
+###############################################
 
 
-def transform_data():
-    """
-        Transform data after loading into Datalake (MinIO)
-    """
+###############################################
+# Process data
+###############################################
+if __name__ == "__main__":
+
     import s3fs
 
     # Load minio config
@@ -208,20 +161,21 @@ def transform_data():
         anon=False,
         key=datalake_cfg["access_key"],
         secret=datalake_cfg["secret_key"],
-        client_kwargs={'endpoint_url': 'http://minio:9000'}
+        client_kwargs={'endpoint_url': "http://localhost:9000"}
     )
 
     # Create bucket 'processed'
     create_bucket(datalake_cfg['bucket_name_2'])
 
-    # Transform data
+
     for year in YEARS:
-        all_fps = glob(os.path.join(BASE_PATH, nyc_data_cfg["folder_path"], year, "*.parquet"))
+
+        all_fps = glob(os.path.join(DATA_PATH, year, "*.parquet"))
 
         for file in all_fps:
             file_name = file.split('/')[-1]
             print(f"Reading parquet file: {file_name}")
-            
+
             df = pd.read_parquet(file, engine='pyarrow')
 
             # lower case all columns
@@ -236,5 +190,28 @@ def transform_data():
             df.to_parquet(path, index=False, filesystem=s3_fs, engine='pyarrow')
             print("Finished transforming data in file: " + path)
             print("==========================================================================================")
-            time.sleep(5)
 ###############################################
+
+
+        # for file in os.listdir(year_path):
+        #     if file.endswith(".parquet"):
+        #         df = pd.read_parquet(os.path.join(year_path, file), engine='pyarrow')
+
+        #         # lower case all columns
+        #         df.columns = map(str.lower, df.columns)
+
+        #         df = drop_column(df, file)
+        #         df = merge_taxi_zone(df, file)
+        #         df = transform_data(df, file)
+
+        #         # save to parquet file
+        #         # df.to_parquet(os.path.join(year_path, file), index=False, engine='pyarrow')
+
+        #         # path = f"s3://{datalake_cfg['bucket_name_2']}/{datalake_cfg['folder_name']}/" + file_name
+        #         path = f"s3://test/{datalake_cfg['folder_name']}/" + file_name
+        #         df.to_parquet(path, index=False, filesystem=s3_fs, engine='pyarrow')
+
+        #         print("Finished preprocessing data in file: " + file)
+        #         print("==========================================================================================")
+
+                

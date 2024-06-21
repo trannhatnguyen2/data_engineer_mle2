@@ -11,7 +11,7 @@
 dbt init
 ```
 
-Run this command and enter a name of your project `dbt_nyc`, after that you can the folder `dbt_nyc` with the following structure:
+Run this command and enter a name of your project `dbt_nyc`, after that you can see the folder `dbt_nyc` with the following structure:
 
 ```shell
 .
@@ -90,3 +90,5 @@ dbt test
 - Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+
+---

@@ -3,9 +3,17 @@ from glob import glob
 from minio import Minio
 from helpers import load_cfg
 
+###############################################
+# Parameters & Arguments
+###############################################
 CFG_FILE = "./config/datalake.yaml"
-YEARS = ["2020", "2021", "2022", "2023"]
+YEARS = ["2022", "2023"]
+###############################################
 
+
+###############################################
+# Main
+###############################################
 def main():
     cfg = load_cfg(CFG_FILE)
     datalake_cfg = cfg["datalake"]
@@ -37,6 +45,8 @@ def main():
                 object_name=os.path.join(datalake_cfg["folder_name"], os.path.basename(fp)),
                 file_path=fp,
             )
+###############################################
+
 
 if __name__ == "__main__":
     main()

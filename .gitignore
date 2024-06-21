@@ -1,2 +1,4 @@
 /data/*
 /jars/*
+/logs/dbt.log
+test.py
