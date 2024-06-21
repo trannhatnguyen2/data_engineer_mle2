@@ -21,14 +21,7 @@ This fragmentation led to incomplete insights and impeded our capability to make
 
 ```shell
 .
-    ├── airflow/                                     /* airflow folder including dags,.. /*
-    │   ├── config/                                     /* contain config files for airflow /*
-    │   ├── dags/                                       /* contain all dags in pipeline /*
-    │       ├── elt_pipeline_dag.py                         /* dag: extract - load - process (ELT pipeline) and convert to delta lake format /*
-    │       └── delta_dag.py                                /* dag: convert parquet to delta lake format /*
-    │   ├── ...
-    │   ├── Dockerfile                                  /* build image to run airflow container /*
-    │   └── requirements.txt                            /* dependencies for airflow /*
+    ├── airflow/                                    /* airflow folder including dags,.. /*
     ├── batch_processing/
     │   ├── datalake_to_dw.py                           /* ETL data from datalake to staging area /*
     │   ├── helpers.py
@@ -109,7 +102,7 @@ This fragmentation led to incomplete insights and impeded our capability to make
 1.  **Clone the repository**:
 
     ```bash
-    git clone https://github.com/trannhatnguyen2/data-engineer-mle2 # Your github repository
+    git clone https://github.com/trannhatnguyen2/data-engineer-mle2
     ```
 
 2.  **Start all infrastructures**:
@@ -164,7 +157,7 @@ This fragmentation led to incomplete insights and impeded our capability to make
 ```
 
 <p align="center">
-<img src="./imgs/batch_1.png" width=50% height=50%>
+<img src="./imgs/batch_1.png" width=100% height=100%>
 
 <p align="center">
     Pushed the data to MinIO successfully
@@ -177,7 +170,7 @@ This fragmentation led to incomplete insights and impeded our capability to make
 ```
 
 <p align="center">
-<img src="./imgs/batch_2.png" width=50% height=50%>
+<img src="./imgs/batch_2.png" width=100% height=100%>
 
 <p align="center">
     Processed the data successfully
@@ -190,7 +183,7 @@ This fragmentation led to incomplete insights and impeded our capability to make
 ```
 
 <p align="center">
-<img src="./imgs/batch_3.png" width=50% height=50%>
+<img src="./imgs/batch_3.png" width=100% height=100%>
 
 <p align="center">
     Converted the data successfully
@@ -212,7 +205,7 @@ This fragmentation led to incomplete insights and impeded our capability to make
 This command may take a little time to process.
 
 <p align="center">
-<img src="./imgs/batch_5.png" width=60% height=60%>
+<img src="./imgs/batch_5.png" width=100% height=100%>
 
 <p align="center">
     Queried the data after executing Spark
@@ -229,7 +222,7 @@ This command may take a little time to process.
 Then, run the file `full_flow.ipynb`
 
 <p align="center">
-<img src="./imgs/batch_6.png" width=60% height=60%>
+<img src="./imgs/batch_6.png" width=100% height=100%>
 
 <p align="center">
     Validated the data using Great Expectations
@@ -246,7 +239,7 @@ Read `README.md` for the next steps
 8. **(Optional) Check the data in the Data Warehouse**
 
 <p align="center">
-<img src="./imgs/batch_8.png" width=60% height=60%>
+<img src="./imgs/batch_8.png" width=50% height=50%>
 
 ### II. Stream Processing
 
@@ -258,7 +251,7 @@ Read `README.md` for the next steps
 ```
 
 <p align="center">
-<img src="./imgs/stream_1.png" width=60% height=60%>
+<img src="./imgs/stream_1.png" width=100% height=100%>
 
 <p align="center">
     Created Debezium Connector successfully
@@ -276,7 +269,7 @@ Read `README.md` for the next steps
 Access `localhost:9021` to check the data stream in the `device.iot.taxi_nyc_time_series` Topic.
 
 <p align="center">
-<img src="./imgs/stream_2.png" width=60% height=60%>
+<img src="./imgs/stream_2.png" width=100% height=100%>
 
 <p align="center">
     Data stream in `device.iot.taxi_nyc_time_series` Kafka Topic
@@ -289,7 +282,7 @@ Access `localhost:9021` to check the data stream in the `device.iot.taxi_nyc_tim
 ```
 
 <p align="center">
-<img src="./imgs/stream_3.png" width=60% height=60%>
+<img src="./imgs/stream_3.png" width=100% height=100%>
 
 <p align="center">
     Data Stream stored into 'raw' bucket in MinIO
@@ -345,6 +338,8 @@ After that, run the following command to register a new schema for our data:
 ```
 
 Read `README.md` for the next steps
+
+---
 
 ### Reference:
 
