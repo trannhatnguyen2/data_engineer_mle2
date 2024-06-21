@@ -1,7 +1,7 @@
 # Data Transformation DBT
 
 <p align="center">
-<img src="../imgs/logo/dbt_logo.png" width=60% height=60%>
+<img src="../imgs/logo/dbt_logo.png" width=40% height=40%>
 
 ## Getting Started
 
