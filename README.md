@@ -1,4 +1,4 @@
-# 🚕 NYC_TAXI Data Engineer Project - MLE2 - M2 🚕
+# 🚕 NYC_TAXI Data Pipeline 🚕
 
 In today's data-driven landscape, analyzing extensive datasets is essential for deriving business insights. Our Taxi Data Analytics application leverages <b>Airflow, Spark, Delta Lake, Debezium, Kafka, DBT,</b> and <b>Great Expectations</b> to convert raw taxi trip data into actionable intelligence.
 
@@ -102,7 +102,7 @@ This fragmentation led to incomplete insights and impeded our capability to make
 1.  **Clone the repository**:
 
     ```bash
-    git clone https://github.com/trannhatnguyen2/data-engineer-mle2
+    git clone https://github.com/trannhatnguyen2/NYC_Taxi_Data_Pipeline
     ```
 
 2.  **Start all infrastructures**:
