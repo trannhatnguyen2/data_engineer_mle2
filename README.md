@@ -1,4 +1,4 @@
-# 🚕 YC_TAXI Data Engineer Project - MLE2 - Module 2 🚕
+# 🚕 YC_TAXI Data Engineer Project - MLE2 - M2 🚕
 
 In today's data-driven landscape, analyzing extensive datasets is essential for deriving business insights. Our Taxi Data Analytics application leverages Airflow, Spark, Delta Lake, Debezium, Kafka, DBT, and Great Expectations to convert raw taxi trip data into actionable intelligence.
 
