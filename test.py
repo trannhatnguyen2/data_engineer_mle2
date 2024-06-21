@@ -82,11 +82,11 @@ spark = (SparkSession.builder.config("spark.executor.memory", "4g") \
                         .getOrCreate()
         )
 
-file_name = 'data/2022/yellow_tripdata_2022-01.parquet'
-# file_path = f's3a://raw/batch/yellow_tripdata_2022-01.parquet'
+# file_name = 'data/2022/yellow_tripdata_2022-01.parquet'
+file_name = f's3a://processed/batch/yellow_tripdata_2022-01.parquet'
 
 df = spark.read.parquet(file_name)
-print(df.select("payment_type").distinct().collect())
+# print(df.select("dolocationid").distinct().collect())
 df.show()
 print(df.count())
 df.printSchema()

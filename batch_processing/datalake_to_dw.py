@@ -142,8 +142,8 @@ def load_to_staging_table(df):
     }
 
     # write data to PostgreSQL
-    # df.write.jdbc(url=URL, table= DB_STAGING_TABLE, mode='append', properties=properties)
-    df.write.jdbc(url=URL, table= 'staging.nyc_taxi_test', mode='append', properties=properties)
+    df.write.jdbc(url=URL, table= DB_STAGING_TABLE, mode='append', properties=properties)
+    # df.write.jdbc(url=URL, table= 'staging.nyc_taxi_test', mode='append', properties=properties)
 ###############################################
 
 
@@ -166,6 +166,7 @@ if __name__ == "__main__":
         
         # load data to staging table in PostgreSQL
         load_to_staging_table(df_final)
+        print("="*100)
 
     logging.info(f"Time to process: {time.time() - start_time}")
     logging.info("Batch processing successfully!")

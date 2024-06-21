@@ -175,10 +175,15 @@ def process(df, file):
             inplace=True
         )
 
-    # fix data type in columns 'payment_type'
-    # df["payment_type"] = df["payment_type"].fillna(0)
+    # fix data type in columns 'payment_type', 'dolocationid', 'pulocationid', 'vendorid'
     if "payment_type" in df.columns:
         df["payment_type"] = df["payment_type"].astype(int)
+    if "dolocationid" in df.columns:
+        df["dolocationid"] = df["dolocationid"].astype(int)
+    if "pulocationid" in df.columns:
+        df["pulocationid"] = df["pulocationid"].astype(int)
+    if "vendorid" in df.columns:
+        df["vendorid"] = df["vendorid"].astype(int)
 
     # drop column 'fee'
     if "fee" in df.columns:
@@ -235,6 +240,6 @@ def transform_data():
             path = f"s3://{datalake_cfg['bucket_name_2']}/{datalake_cfg['folder_name']}/" + file_name
             df.to_parquet(path, index=False, filesystem=s3_fs, engine='pyarrow')
             print("Finished transforming data in file: " + path)
-            print("==========================================================================================")
+            print("="*100)
             time.sleep(5)
 ###############################################
