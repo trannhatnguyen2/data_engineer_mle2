@@ -53,3 +53,5 @@ You can manually run DAGS by click on `Run`
 </p>
 
 ---
+
+<p>&copy; 2024 NhatNguyen</p>

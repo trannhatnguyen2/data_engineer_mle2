@@ -2,13 +2,13 @@
 
 In today's data-driven landscape, analyzing extensive datasets is essential for deriving business insights. Our Taxi Data Analytics application leverages Airflow, Spark, Delta Lake, Debezium, Kafka, DBT, and Great Expectations to convert raw taxi trip data into actionable intelligence.
 
-## Challenge: Data Integration Issues
+## 💥 Challenge: Data Integration Issues 💥
 
 At the beginning, our operations encountered considerable difficulties in integrating various data sources. The diversity in systems and formats posed challenges in consolidating and thoroughly analyzing trip data.
 
 This fragmentation led to incomplete insights and impeded our capability to make informed decisions based on data effectively. Hence, we required a robust solution to consolidate our data sources or streamline the analysis process.
 
-## System Architecture
+## 🌟 System Architecture 🌟
 
 <p align="center">
 <img src="./imgs/big-data-diagram.svg" width=100% height=100%>
@@ -17,7 +17,7 @@ This fragmentation led to incomplete insights and impeded our capability to make
     System Architecture
 </p>
 
-## Repository structure:
+## 📁 Repository structure 📁
 
 ```shell
 .
@@ -97,7 +97,7 @@ This fragmentation led to incomplete insights and impeded our capability to make
     └── stream-docker-compose.yaml
 ```
 
-## Getting Started
+## 🚀 Getting Started 🚀
 
 1.  **Clone the repository**:
 
@@ -234,7 +234,14 @@ Then, run the file `full_flow.ipynb`
    cd dbt_nyc
 ```
 
-Read `README.md` for the next steps
+Read [`README.md`](https://github.com/trannhatnguyen2/data-engineer-mle2/tree/main/dbt_nyc) for the next steps
+
+<p align="center">
+<img src="./imgs/star_schema.png" width=100% height=100%>
+
+<p align="center">
+    Data Warehouse - Star Schema
+</p>
 
 8. **(Optional) Check the data in the Data Warehouse**
 
@@ -337,10 +344,21 @@ After that, run the following command to register a new schema for our data:
    cd airflow/
 ```
 
-Read `README.md` for the next steps
+Read [`README.md`](https://github.com/trannhatnguyen2/data-engineer-mle2/tree/main/airflow) for the next steps
+
+<p align="center">
+<img src="./imgs/airflow_pipeline.png" width=100% height=100%>
+
+<p align="center">
+    Airflow Result
+</p>
 
 ---
 
 ### Reference:
 
 [1] [NYC Taxi Trip Dataset](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+
+---
+
+<p>&copy; 2024 NhatNguyen</p>

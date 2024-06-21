@@ -92,3 +92,5 @@ dbt test
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
 
 ---
+
+<p>&copy; 2024 NhatNguyen</p>
