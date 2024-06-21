@@ -1,6 +1,7 @@
-Welcome to your new dbt project!
-
 # Data Transformation DBT
+
+<p align="center">
+<img src="../imgs/logo/dbt_logo.png" width=60% height=60%>
 
 ## Getting Started
 
