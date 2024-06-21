@@ -76,7 +76,7 @@ dbt test
 ## Result:
 
 <p align="center">
-<img src="../imgs/dbt.png" width=100% height=100%>
+<img src="../imgs/dbt.png" width=80% height=80%>
 
 <p align="center">
     DBT Result
