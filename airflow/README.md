@@ -34,18 +34,18 @@ After that, you can see the following structure:
 You can access at `http://localhost:8080/` and login with username && password is `airflow`
 
 <p align="center">
-<img src="../imgs/airflow_1.png" width=40% height=40%>
+<img src="../imgs/airflow_1.png" width=100% height=100%>
 
 3. **Run DAG**:
    You can manually run DAGS by click on `Run`
 
 <p align="center">
-<img src="../imgs/airflow_2.png" width=40% height=40%>
+<img src="../imgs/airflow_2.png" width=100% height=100%>
 
 ## Result:
 
 <p align="center">
-<img src="../imgs/airflow_pipeline.png" width=80% height=80%>
+<img src="../imgs/airflow_pipeline.png" width=100% height=100%>
 
 <p align="center">
     Airflow Result
