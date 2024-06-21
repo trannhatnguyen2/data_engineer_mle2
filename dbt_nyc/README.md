@@ -6,13 +6,13 @@ Welcome to your new dbt project!
 
 1.  **Create dbt project**:
 
-    ```bash
-    dbt init
-    ```
+```bash
+dbt init
+```
 
-    Run this command and enter a name of your project `dbt_nyc`, after that you can the folder `dbt_nyc` with the following structure:
+Run this command and enter a name of your project `dbt_nyc`, after that you can the folder `dbt_nyc` with the following structure:
 
-```txt
+```shell
 .
 ├── dbt_nyc/
     ├── analyses/
@@ -50,32 +50,37 @@ Welcome to your new dbt project!
 
 2. **Manage dependencies**:
 
-   Create `packages.yml` into `dbt_nyc` folder:
+Create `packages.yml` into `dbt_nyc` folder:
 
-   ```txt
-        packages:
-        - package: dbt-labs/dbt_utils
-            version: 0.8.0
-   ```
+```txt
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 0.8.0
+```
 
-   Then run this `dbt deps` to install the packages - by default this directory is ignored by git, to avoid duplicating the source code for the package.
+Then run this `dbt deps` to install the packages - by default this directory is ignored by git, to avoid duplicating the source code for the package.
 
-   ```bash
-   dbt deps
-   ```
+```bash
+dbt deps
+```
 
 3. **Running dbt project**:
 
-   Try running the following commands:
+Try running the following commands:
 
-   ```bash
-   dbt run
-   dbt test
-   ```
+```bash
+dbt run
+dbt test
+```
 
 ## Result:
 
-![](../imgs/dbt.png)
+<p align="center">
+<img src="../imgs/dbt.png" width=100% height=100%>
+
+<p align="center">
+    DBT Result
+</p>
 
 ## Resources:
 
